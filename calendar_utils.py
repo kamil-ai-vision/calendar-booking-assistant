@@ -3,13 +3,19 @@ from googleapiclient.discovery import build
 from datetime import datetime, timedelta
 from dateutil.parser import parse
 import pytz
+import streamlit as st
+import json
 
 from config import GOOGLE_CALENDAR_ID, GOOGLE_SERVICE_ACCOUNT_FILE
 
+# 📌 Load credentials and calendar ID from Streamlit secrets
+GOOGLE_CALENDAR_ID = st.secrets["GOOGLE_CALENDAR_ID"]
+service_account_info = json.loads(st.secrets["GOOGLE_SERVICE_ACCOUNT_JSON"])
+
 # 📌 Authenticate with Google Calendar
 def get_calendar_service():
-    credentials = service_account.Credentials.from_service_account_file(
-        GOOGLE_SERVICE_ACCOUNT_FILE,
+    credentials = service_account.Credentials.from_service_account_info(
+        service_account_info,
         scopes=['https://www.googleapis.com/auth/calendar']
     )
     service = build('calendar', 'v3', credentials=credentials)
