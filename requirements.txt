@@ -1,0 +1,22 @@
+# === Backend Framework ===
+fastapi
+uvicorn
+
+# === LangChain + Gemini ===
+langchain
+google-cloud-aiplatform 
+
+# === Google Calendar API ===
+google-api-python-client
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+
+# === Utilities ===
+python-dotenv
+requests
+pytz
+python-dateutil
+
+# === Frontend ===
+streamlit
