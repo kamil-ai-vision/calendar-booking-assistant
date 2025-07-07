@@ -17,6 +17,7 @@ python-dotenv
 requests
 pytz
 python-dateutil
+dateparser
 
 # === Frontend ===
 streamlit
