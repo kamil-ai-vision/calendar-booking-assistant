@@ -7,7 +7,7 @@ from dateutil.parser import parse
 from calendar_utils import get_today_events
 
 # 🌐 FastAPI backend URL
-API_URL = "http://localhost:8000/agent"
+API_URL = "https://calendar-booking-assistant.onrender.com"
 
 # 🛠️ Page config
 st.set_page_config(page_title="🧠 Calendar Assistant", layout="wide")
