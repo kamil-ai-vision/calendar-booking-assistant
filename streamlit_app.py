@@ -76,7 +76,7 @@ if user_input:
         with st.spinner("🤔 Thinking..."):
             start_time = time.time()
             try:
-                response = requests.post(API_URL, json={"message": user_input}, timeout=30)
+                response = requests.post(f"{API_URL}/agent", json={"message": user_input}, timeout=30)
                 response.raise_for_status()
                 data = response.json()
                 assistant_reply = data.get("response")
